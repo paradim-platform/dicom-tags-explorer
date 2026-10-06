@@ -1,0 +1,10 @@
+services:
+  dicom-tags-explorer:
+    build: .
+    image: dicom-tags-explorer
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp

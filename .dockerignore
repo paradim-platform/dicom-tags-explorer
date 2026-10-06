@@ -1,0 +1,9 @@
+node_modules
+dist
+.idea
+.vite
+coverage
+*.local
+.DS_Store
+Dockerfile
+.dockerignore

@@ -1,0 +1,10 @@
+.idea/
+
+node_modules
+dist
+*.local
+.DS_Store
+.vite
+coverage
+.nvmrc
+package-lock.json
