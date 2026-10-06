@@ -2,7 +2,7 @@
 
 A fast, lightweight DICOM tag inspector that runs in the browser. Drop files or folders, and inspect every tag, including nested sequences, without opening 3D Slicer or uploading anything to Orthanc.
 
-**Try it: https://gacou54.github.io/dicom-tags-explorer/**
+**Try it: https://paradim-platform.github.io/dicom-tags-explorer/**
 
 - **Local only**: files are parsed in the browser. Nothing is uploaded; there is no backend.
 - **Instant**: only the header is read (the parser stops at the pixel data), so multi-GB files open immediately.
