@@ -2,6 +2,8 @@
 
 A fast, lightweight DICOM tag inspector that runs in the browser. Drop files or folders, and inspect every tag, including nested sequences, without opening 3D Slicer or uploading anything to Orthanc.
 
+**Try it: https://gacou54.github.io/dicom-tags-explorer/**
+
 - **Local only**: files are parsed in the browser. Nothing is uploaded; there is no backend.
 - **Instant**: only the header is read (the parser stops at the pixel data), so multi-GB files open immediately.
 - **Nested sequences**: a collapsible tree with item numbers, paths (`ReferencedSeriesSequence[0].SeriesInstanceUID`), and private sequences, including those hidden in `UN` elements or in implicit VR files.
@@ -9,6 +11,9 @@ A fast, lightweight DICOM tag inspector that runs in the browser. Drop files or 
 - **Details panel**: every value of the element, VR (explicit or from the dictionary), VM, length, byte offset, private creator, UID names, and a hex dump for binary values.
 - **Folders**: browse many files. The selection and expanded sequences are kept when moving to the next file, which makes comparing a tag across a series easy.
 - **Robust**: implicit/explicit VR, big endian, deflated, files without preamble or file meta, all character sets (including ISO 2022 Japanese, Korean and Chinese). Truncated or corrupted files show everything read before the error.
+
+## Disclaimer
+This project has been in large part generated with Claude Opus 5.5.
 
 ## Usage
 
@@ -38,6 +43,8 @@ npm run build      # static build in dist/
 ```
 
 ### Deployment
+
+The public site on GitHub Pages is deployed by `.github/workflows/pages.yml` on every push to `main` (tests, type checking, then build). GitHub Pages cannot send custom headers, so the build also puts the Content Security Policy in a `<meta>` tag of `index.html` (see `vite.config.ts`).
 
 With Docker (nginx, port 8080):
 
